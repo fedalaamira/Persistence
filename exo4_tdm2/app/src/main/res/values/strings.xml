@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">exo2_tdm2</string>
+    <string-array name="options">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+</resources>

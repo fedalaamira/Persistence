@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Titre"
+        android:id="@+id/nom"
+        ></TextView>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/nom"
+    android:id="@id/title">
+
+</EditText>
+    <TextView
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:id="@+id/dat"></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dat"
+        android:id="@+id/date">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/ajtdate"
+        android:layout_width="35dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/dat"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-2dp"
+        android:layout_marginRight="26dp"
+        android:text="+">
+
+    </Button>
+
+    <TextView
+        android:layout_below="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="note"
+        android:id="@+id/desc"></TextView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc"
+        android:id="@+id/description">
+
+    </EditText>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/combobox"
+        android:layout_below="@+id/description"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/combobox"
+        android:padding="16dp"
+        android:id="@+id/ajouter"
+        android:text="Ajouter"
+        >
+
+    </Button>
+</RelativeLayout>
