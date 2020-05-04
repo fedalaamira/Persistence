@@ -5,21 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mdl"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="le module ou enseignant ou salle"
+        />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="import"
+        android:text="module"
         android:id="@+id/button"
+     android:layout_below="@+id/mdl"
         android:layout_centerHorizontal="true"
         />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="import"
-        android:id="@+id/button"
+        android:text="enseignant"
+        android:id="@+id/button2"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button"
         />
-
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="salle"
+        android:id="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button2"
+        />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:id="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button3"
+        />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="semaine"
+        android:id="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/button4"
+        />
 </RelativeLayout>

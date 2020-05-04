@@ -29,7 +29,7 @@ abstract class SeanceDataBase:RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     SeanceDataBase::class.java,
-                    "seances"
+                    "seances2"
                 ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance as SeanceDataBase

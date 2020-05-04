@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00941D1D"
+    tools:context=".MainActivity"
+    android:id="@+id/layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-1dp"
+android:layout_below="@+id/set"
+        android:background="#00740B0B">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:background="#E9C9B1">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </ScrollView>
+
+</RelativeLayout>
