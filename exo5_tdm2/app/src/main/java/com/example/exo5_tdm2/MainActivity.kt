@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 
 class MainActivity : AppCompatActivity() {
+    lateinit var list : MutableList<String>
 val REQUEST_PERMESSION=1
     val REQUEST_PERMESSION2=2
     var test2:String=""
@@ -26,16 +27,19 @@ val REQUEST_PERMESSION=1
         }
         else {
 
-             test2=getContacts()
-            test.text=test2.toString()
+          getContacts ()
+
             Log.d("test",test2)
-            Log.w("test",test2)
+
             btn.setOnClickListener{
                 if(ActivityCompat.checkSelfPermission(this,Manifest.permission.SEND_SMS)!= PackageManager.PERMISSION_GRANTED){
                     ActivityCompat.requestPermissions(this,arrayOf(Manifest.permission.SEND_SMS),REQUEST_PERMESSION2)
                 }
                 else{
-                    sendSms(test2)
+                    for (i in  list){
+                        sendSms(i)
+                    }
+
                 }
             }
         }
@@ -53,14 +57,16 @@ val REQUEST_PERMESSION=1
 
         }
         if(requestCode== REQUEST_PERMESSION2){
-            sendSms(this.test2)
+            for (i in list){
+                sendSms(i)
+            }
         }
     }
     private fun sendSms(number:String){
-        SmsManager.getDefault().sendTextMessage("0796300359",null,"test",null,null)
+        SmsManager.getDefault().sendTextMessage(number,null,"test",null,null)
 
     }
-    private fun  getContacts() :String{
+    private fun  getContacts() {
         var phoneNumber =""
         val contactCurser=contentResolver.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null)
         if ((contactCurser?.count?:0)>0){
@@ -81,7 +87,7 @@ val REQUEST_PERMESSION=1
                             phoneNumberCurser.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
                         )+"\n"
 
-
+                    list.add(phoneNumber)
                     }
                         phoneNumberCurser.close()
                     }
@@ -91,6 +97,6 @@ val REQUEST_PERMESSION=1
             }
 
         }
-        return phoneNumber
+
     }
 }
