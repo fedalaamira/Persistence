@@ -2,6 +2,7 @@ package com.example.exo2_tdm2
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,9 +29,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var list : MutableList<Int>
     lateinit var adapter: RecyclerAdapter
      lateinit var db:NoteDataBase
-
+   lateinit var intent2:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
 
+       intent2 = Intent(this, Main2Activity::class.java)
         db= NoteDataBase.getDatabase(this)
 
         super.onCreate(savedInstanceState)
@@ -100,7 +102,7 @@ if(listall.isNotEmpty()){
            mDialog.ajtdate.setOnClickListener {
 
                 val datePickerDialog = DatePickerDialog(this,R.style.AppTheme, DatePickerDialog.OnDateSetListener { test, mYear, mMonth, dayOfMonth ->
-                 mDialog.dat.setText(""+dayOfMonth+"_"+mMonth+"_"+mYear)
+                 mDialog.date.setText(""+dayOfMonth+"_"+mMonth+"_"+mYear)
                     day=dayOfMonth
                     mois=mMonth
                     year=mYear
@@ -138,20 +140,6 @@ if(listall.isNotEmpty()){
             list.add(i)
         }
         return list
-    }
-    fun color(pst:Int,layout: RelativeLayout):Int{
-
-        if(pst==0){
-
-           return Color.RED
-        }
-        if(pst==1){
-           return Color.BLUE
-        }
-        if(pst==2){
-            return Color.GREEN
-        }
-   return 0
     }
 
 }

@@ -15,7 +15,6 @@ data class Note (
     var jour:Int,
     var mois:Int,
     var annee:Int,
-
     var desc:String
 
 )

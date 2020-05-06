@@ -4,24 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00941D1D"
+
     tools:context=".MainActivity"
     android:id="@+id/layout">
 
 
     <Button
         android:id="@+id/addTacheBtnView"
-        android:layout_width="250dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="5dp"
 
-        android:text="+"
+android:background="@color/colorPrimary"
+
+android:layout_margin="10dp"
+        android:text="Ajouter"
 
         />
 
@@ -33,7 +30,7 @@ android:id="@+id/scroll"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-1dp"
         android:layout_below="@+id/addTacheBtnView"
-        android:background="#00740B0B">
+       >
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -42,7 +39,7 @@ android:id="@+id/scroll"
             android:layout_height="match_parent"
 
 
-            android:background="#E9C9B1">
+            >
 
         </androidx.recyclerview.widget.RecyclerView>
 

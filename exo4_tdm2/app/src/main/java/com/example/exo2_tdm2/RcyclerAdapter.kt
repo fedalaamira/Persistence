@@ -1,17 +1,16 @@
 package com.example.tp4_exo3
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
-import com.example.exo2_tdm2.MainActivity
-import com.example.exo2_tdm2.Note
-import com.example.exo2_tdm2.NoteDataBase
-import com.example.exo2_tdm2.R
+import com.example.exo2_tdm2.*
 
 /**
  *Created by Fedala Amira.
@@ -24,6 +23,7 @@ class RecyclerAdapter(val activity : MainActivity) : RecyclerView.Adapter<Recycl
         val titre = v.findViewById<TextView>(R.id.titre)
         val date=v.findViewById<TextView>(R.id.date)
         val desc=v.findViewById<TextView>(R.id.desc)
+
 
 
 
@@ -46,7 +46,7 @@ class RecyclerAdapter(val activity : MainActivity) : RecyclerView.Adapter<Recycl
         holder.titre.text = activity.itemList[activity.list[position]].titre
         holder.desc.text=activity.itemList[activity.list[position]].desc
         holder.date.text=activity.itemList[activity.list[position]].annee.toString()+"_"+activity.itemList[activity.list[position]].mois.toString()+"_"+activity.itemList[activity.list[position]].jour.toString()
-         holder.itemLayout.setBackgroundColor(activity.color(activity.pst,holder.itemLayout))
+
         holder.image.setOnClickListener{
 
             activity.db.daoNote().delete(activity.itemList[activity.list[position]])
@@ -55,6 +55,17 @@ class RecyclerAdapter(val activity : MainActivity) : RecyclerView.Adapter<Recycl
 
 
             activity.update()
+        }
+        holder.itemLayout.setOnClickListener {
+
+
+            activity.intent2.putExtra("titre",activity.itemList[activity.list[position]].titre)
+            activity.intent2.putExtra("date", activity.itemList[activity.list[position]].annee.toString()+"_"+activity.itemList[activity.list[position]].mois.toString()+"_"+activity.itemList[activity.list[position]].jour.toString())
+            activity.intent2.putExtra("desc",activity.itemList[activity.list[position]].desc)
+
+           startActivity(activity,activity.intent2,null)
+
+
         }
 
 

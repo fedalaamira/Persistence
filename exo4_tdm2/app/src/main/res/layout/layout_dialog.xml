@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:text="Titre"
         android:id="@+id/nom"
+        android:textColor="@color/colorPrimary"
         ></TextView>
 <EditText
     android:layout_width="match_parent"
@@ -21,11 +22,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="date"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/dat"></TextView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/dat"
+        android:layout_marginTop="5dp"
         android:id="@+id/date">
 
     </EditText>
@@ -47,11 +50,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="note"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/desc"></TextView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/desc"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/description">
 
     </EditText>
@@ -59,6 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/combobox"
+        android:layout_margin="3dp"
         android:layout_below="@+id/description"/>
     <Button
         android:layout_width="match_parent"
@@ -66,7 +72,9 @@
         android:layout_below="@+id/combobox"
         android:padding="16dp"
         android:id="@+id/ajouter"
+        android:background="@color/colorPrimary"
         android:text="Ajouter"
+        android:layout_margin="8dp"
         >
 
     </Button>
